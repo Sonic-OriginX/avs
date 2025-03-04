@@ -4,13 +4,13 @@ pragma solidity ^0.8.9;
 import {Reclaim} from "./Reclaim/Reclaim.sol";
 
 interface IOriginXServiceManager {
-    event NewOptiTaskCreated(uint32 indexed taskIndex, OptiTask task);
+    event NewOriginTaskCreated(uint32 indexed taskIndex, OriginTask task);
 
-    event OptiTaskResponded(uint32 indexed taskIndex, OptiTask task, address operator, bytes signature);
+    event OriginTaskResponded(uint32 indexed taskIndex, OriginTask task, address operator, bytes signature);
 
     event Debug(bytes32 storedHash, bytes32 suppliedHash);
 
-    struct OptiTask{
+    struct OriginTask{
         address accountAddress;
         string stakingAddress;
         uint32 taskCreatedBlock;
@@ -29,10 +29,10 @@ interface IOriginXServiceManager {
 
     function taskAgent(
         string memory taskName
-    ) external returns (OptiTask memory);
+    ) external returns (OriginTask memory);
 
     function respondToApproveTask(
-        OptiTask calldata task,
+        OriginTask calldata task,
         uint32 referenceTaskIndex,
         bytes calldata signature,
         Reclaim.Proof memory proof

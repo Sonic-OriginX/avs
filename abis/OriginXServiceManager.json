@@ -266,7 +266,7 @@
       {
         "name": "task",
         "type": "tuple",
-        "internalType": "struct IOriginXServiceManager.OptiTask",
+        "internalType": "struct IOriginXServiceManager.OriginTask",
         "components": [
           {
             "name": "accountAddress",
@@ -420,7 +420,7 @@
       {
         "name": "",
         "type": "tuple",
-        "internalType": "struct IOriginXServiceManager.OptiTask",
+        "internalType": "struct IOriginXServiceManager.OriginTask",
         "components": [
           {
             "name": "accountAddress",
@@ -521,7 +521,7 @@
   },
   {
     "type": "event",
-    "name": "NewOptiTaskCreated",
+    "name": "NewOriginTaskCreated",
     "inputs": [
       {
         "name": "taskIndex",
@@ -533,7 +533,7 @@
         "name": "task",
         "type": "tuple",
         "indexed": false,
-        "internalType": "struct IOriginXServiceManager.OptiTask",
+        "internalType": "struct IOriginXServiceManager.OriginTask",
         "components": [
           {
             "name": "accountAddress",
@@ -557,7 +557,7 @@
   },
   {
     "type": "event",
-    "name": "OptiTaskResponded",
+    "name": "OriginTaskResponded",
     "inputs": [
       {
         "name": "taskIndex",
@@ -569,7 +569,7 @@
         "name": "task",
         "type": "tuple",
         "indexed": false,
-        "internalType": "struct IOriginXServiceManager.OptiTask",
+        "internalType": "struct IOriginXServiceManager.OriginTask",
         "components": [
           {
             "name": "accountAddress",

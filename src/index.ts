@@ -176,7 +176,7 @@ const registerOperator = async () => {
 
 const monitorNewTasks = async () => {
 
-    originXServiceManager.on("NewOptiTaskCreated", async (taskIndex: number, task: any) => {
+    originXServiceManager.on("NewOriginTaskCreated", async (taskIndex: number, task: any) => {
         try {
             console.log(`New task detected!`);
 

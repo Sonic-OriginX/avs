@@ -61,22 +61,22 @@ contract OriginXServiceManager is
 
     function taskAgent(
         string memory stakingAddress
-    ) external returns (OptiTask memory) {
-        OptiTask memory optiTask;
+    ) external returns (OriginTask memory) {
+        OriginTask memory optiTask;
         optiTask.accountAddress = msg.sender;
         optiTask.stakingAddress = stakingAddress;
         optiTask.taskCreatedBlock = uint32(block.number);
 
         // store hash of task onchain, emit event, and increase taskNum
         allTaskHashes[latestTaskNum] = keccak256(abi.encode(optiTask));
-        emit NewOptiTaskCreated(latestTaskNum, optiTask);
+        emit NewOriginTaskCreated(latestTaskNum, optiTask);
         latestTaskNum = latestTaskNum + 1;
 
         return optiTask;
     }
 
     function respondToApproveTask(
-        OptiTask calldata task,
+        OriginTask calldata task,
         uint32 referenceTaskIndex,
         bytes memory signature,
         Reclaim.Proof memory proof
@@ -116,7 +116,7 @@ contract OriginXServiceManager is
         allTaskResponses[msg.sender][referenceTaskIndex] = signature;
 
         // emitting event
-        emit OptiTaskResponded(referenceTaskIndex, task, msg.sender, proof.signedClaim.signatures[0]);
+        emit OriginTaskResponded(referenceTaskIndex, task, msg.sender, proof.signedClaim.signatures[0]);
     }
     
 }
